@@ -33,7 +33,7 @@ namespace ClubArcada.Apps.LiveMonitor
         {
             Controls.Add(new TournamentCtrl() { Background = Brushes.Red, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
             Controls.Add(new TournamentCtrl() { Background = Brushes.Green, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
-            Controls.Add(new TournamentCtrl() { Background = Brushes.Purple, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
+            Controls.Add(new TournamentCtrl() { Background = Brushes.Blue, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
 
             foreach (var c in Controls)
                 gridSlideContainer.Children.Add(c as FrameworkElement);

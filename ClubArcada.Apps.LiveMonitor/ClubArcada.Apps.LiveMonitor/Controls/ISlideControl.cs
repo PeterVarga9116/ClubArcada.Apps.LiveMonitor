@@ -10,7 +10,7 @@ namespace ClubArcada.Apps.LiveMonitor.Controls
 {
     interface ISlideControl
     {
-
+        Image BackgroundImage { get; set; }
 
     }
 }
