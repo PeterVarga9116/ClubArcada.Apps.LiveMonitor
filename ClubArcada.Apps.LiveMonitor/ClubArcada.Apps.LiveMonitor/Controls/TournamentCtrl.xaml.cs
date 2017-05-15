@@ -78,6 +78,8 @@ namespace ClubArcada.Apps.LiveMonitor.Controls
                 Tournaments.AddRange(tournaments);
             };
 
+            
+
             bw.RunWorkerAsync();
         }
     }

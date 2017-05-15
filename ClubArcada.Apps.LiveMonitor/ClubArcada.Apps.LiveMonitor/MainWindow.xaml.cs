@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
@@ -13,16 +12,14 @@ namespace ClubArcada.Apps.LiveMonitor
     public partial class MainWindow : Window
     {
         private List<ISlideControl> Controls { get; set; }
-
         private DispatcherTimer timerImageChange;
-
 
         public MainWindow()
         {
             InitializeComponent();
 
             timerImageChange = new DispatcherTimer();
-            timerImageChange.Interval = new TimeSpan(0, 0, 3);
+            timerImageChange.Interval = new TimeSpan(0, 0, 5);
             timerImageChange.Tick += new EventHandler(timerImageChange_Tick);
 
             Controls = new List<ISlideControl>();
@@ -32,8 +29,8 @@ namespace ClubArcada.Apps.LiveMonitor
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Controls.Add(new TournamentCtrl() { Background = Brushes.Red, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
-            Controls.Add(new TournamentCtrl() { Background = Brushes.Green, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
-            Controls.Add(new TournamentCtrl() { Background = Brushes.Blue, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
+            Controls.Add(new LeagueCtrl() { Background = Brushes.Green, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
+            Controls.Add(new CashCtrl() { Background = Brushes.Blue, Width = gridSlideContainer.ActualWidth, Height = gridSlideContainer.ActualHeight });
 
             foreach (var c in Controls)
                 gridSlideContainer.Children.Add(c as FrameworkElement);
