@@ -29,24 +29,10 @@ namespace ClubArcada.Apps.LiveMonitor.Controls
             }
         }
 
-        public System.Windows.Controls.Image BackgroundImage
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public TournamentCtrl()
         {
             InitializeComponent();
             DataContext = this;
-            Background = Brushes.Red;
             Canvas.SetLeft(this, 1920);
             StartSession();
         }
@@ -77,8 +63,6 @@ namespace ClubArcada.Apps.LiveMonitor.Controls
                 Tournaments.Clear();
                 Tournaments.AddRange(tournaments);
             };
-
-            
 
             bw.RunWorkerAsync();
         }
